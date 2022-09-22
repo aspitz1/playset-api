@@ -1,7 +1,6 @@
 services:
   - type: web
-    name: my blog
+    name: playset-api
     env: node
-    buildCommand: yarn build
     buildCommand: npm i
     startCommand: npm start:production
