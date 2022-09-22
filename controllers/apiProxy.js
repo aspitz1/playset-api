@@ -27,7 +27,7 @@ const getCardByName = async (req, res) => {
             return res.status(200).send(cleanedCards)
         }
 
-        return res.status(404).send(`No cards where found with the name ${name.split('+').join(' ')}`);
+        return res.status(404).json(`No cards where found with the name ${name.split('+').join(' ')}`);
     } catch (err) {
         return res.status(500).json({ error: err.message });
     }
@@ -42,7 +42,7 @@ const getCardById = async (req, res) => {
             return res.status(200).send(card)
         }
 
-        return res.status(404).send(`No cards where found with the ID: ${id}`);
+        return res.status(404).json(`No cards where found with the ID: ${id}`);
     } catch (err) {
         return res.status(500).json({ error: err.message });
     }
