@@ -12,9 +12,9 @@ module.exports = {
     "dialect": "postgres"
   },
   "production": {
-    "database": "playset_db",
+    "database": process.env.DATABASE_NAME,
     "host": process.env.DATABASE_HOST,
-    "url": process.env.DATABASE_URL,
+    "username": process.env.DATABASE_USERNAME,
     "password": process.env.DATABASE_PASSWORD,  
     "dialect": "postgres"
   }
