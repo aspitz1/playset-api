@@ -10,7 +10,8 @@ const app = express();
 app.use(bodyParser.json())
 app.use('/api', routes);    
 
-db.sequelize.sync({ force: process.env.FORCE ? true : false })
+db.sequelize.authenticate()
     .then(() => {
-        app.listen(PORT, () => console.log(`Listening on port: ${PORT}`))
+        db.sequelize.sync({ force: process.env.FORCE ? true : false });
+        app.listen(PORT, () => console.log(`Listening on port: ${PORT}`));
     });
