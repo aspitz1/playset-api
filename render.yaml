@@ -3,4 +3,4 @@ services:
     name: playset-api
     env: node
     buildCommand: npm i
-    startCommand: npm start:production
+    startCommand: npm run start:production
