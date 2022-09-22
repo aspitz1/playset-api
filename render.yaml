@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: my blog
+    env: node
+    buildCommand: yarn build
+    buildCommand: npm i
+    startCommand: npm start:production
