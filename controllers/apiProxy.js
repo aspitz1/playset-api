@@ -7,7 +7,24 @@ const getCardByName = async (req, res) => {
         const response = await fetch(`https://api.magicthegathering.io/v1/cards?name=${name}`);
         const {cards} = await response.json();
         if (cards.length) {
-            return res.status(200).send(cards)
+            const cardsWithImgs = cards.filter(card => card.imageUrl);
+            const cleanedCards = cardsWithImgs.map(card => {
+                return {
+                    name: card.name,
+                    manaCost: card.manaCost,
+                    colorIdentity: card.colorIdentity,
+                    type: card.type,
+                    rarity: card.rarity,
+                    setName: card.setName,
+                    text: card.text,
+                    artist: card.artist,
+                    imageUrl: card.imageUrl,
+                    legalities: card.legalities,
+                    magicApiId: card.id
+                }
+            });
+
+            return res.status(200).send(cleanedCards)
         }
 
         return res.status(404).send(`No cards where found with the name ${name.split('+').join(' ')}`);
