@@ -22,6 +22,7 @@ module.exports = (sequelize, DataTypes) => {
     },
     name: DataTypes.STRING,
     magicApiId: DataTypes.STRING,
+    imageUrl: DataTypes.STRING,
     amount: DataTypes.INTEGER,
     collections: {
       defaultValue: ['main'],
