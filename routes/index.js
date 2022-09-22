@@ -14,4 +14,8 @@ router.put('/cards/:id', controllers.updateCardById);
 
 router.delete('/cards/:id', controllers.deleteCardById);
 
+router.get('/proxy/cards/:name', controllers.getCardByName);
+
+router.get('/proxy/card/:id', controllers.getCardById);
+
 module.exports = router;
