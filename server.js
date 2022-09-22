@@ -14,4 +14,5 @@ db.sequelize.authenticate()
     .then(() => {
         db.sequelize.sync({ force: process.env.FORCE ? true : false });
         app.listen(PORT, () => console.log(`Listening on port: ${PORT}`));
-    });
+    })
+    .catch(err => console.log(err));
