@@ -57,7 +57,6 @@ const deleteCardById = async (req, res) => {
         const { id } = req.params;
         const destroyed = await Card.destroy({ where: {id: id} });
         if (destroyed) {
-            console.log(destroyed);
             return res.status(200).json({message: 'Your card was destroyed!'});
         } 
 
