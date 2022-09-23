@@ -39,7 +39,21 @@ const getCardById = async (req, res) => {
         const response = await fetch(`https://api.magicthegathering.io/v1/cards/${id}`);
         const {card} = await response.json();
         if (card) {
-            return res.status(200).send(card)
+            const cleanedCard = {
+                    name: card.name,
+                    manaCost: card.manaCost,
+                    colorIdentity: card.colorIdentity,
+                    type: card.type,
+                    rarity: card.rarity,
+                    setName: card.setName,
+                    text: card.text,
+                    artist: card.artist,
+                    imageUrl: card.imageUrl,
+                    legalities: card.legalities,
+                    magicApiId: card.id
+                }
+
+            return res.status(200).send(cleanedCard);
         }
 
         return res.status(404).json(`No cards where found with the ID: ${id}`);
