@@ -27,7 +27,7 @@ const findCardById = async (req, res) => {
             return res.status(200).json({ card });
         }
 
-        return res.status(404).json({message: `A card with ID: ${id} does not exist.`})
+        return res.status(404).json({message: 'That card can not be found.'})
     } catch (err) {
         return res.status(500).json({ error: err.message });
     }
@@ -45,7 +45,7 @@ const updateCardById = async (req, res) => {
             return res.status(200).json({ card: updatedCard });
         }
 
-        return res.status(404).json({message: `A card with ID: ${id} does not exist.`})
+        return res.status(404).json({message: 'That card can not be found.'})
 
     } catch (err) {
         return res.status(500).json({ error: err.message });
@@ -55,12 +55,12 @@ const updateCardById = async (req, res) => {
 const deleteCardById = async (req, res) => {
     try {
         const { id } = req.params;
-        const deleted = Card.destroy({ where: {id: id} });
-        if (deleted) {
-            return res.status(204).json({message: `Card with ID: ${id} was deleted.`});
+        const destroyed = Card.destroy({ where: {id: id} });
+        if (destroyed) {
+            return res.status(204).json({message: 'Your card was destroyed!'});
         } 
 
-        return res.status(404).json({message: `A card with ID: ${id} does not exist.`})
+        return res.status(404).json({message: 'That card can not be found.'})
     } catch (err) {
         return res.status(500).json({ error: err.message });
     }
