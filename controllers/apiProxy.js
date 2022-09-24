@@ -1,5 +1,5 @@
-const { response } = require('express');
 const fetch = require('node-fetch');
+const client = require('../config/redisClient');
 
 const getCardByName = async (req, res) => {
     try {
@@ -23,6 +23,12 @@ const getCardByName = async (req, res) => {
                     magicApiId: card.id
                 }
             });
+            
+            await client.set(name,
+                JSON.stringify(cleanedCards)
+            );
+
+            await client.quit();
 
             return res.status(200).send(cleanedCards)
         }
@@ -52,6 +58,11 @@ const getCardById = async (req, res) => {
                     legalities: card.legalities,
                     magicApiId: card.id
                 }
+
+            await client.set(id,
+                JSON.stringify(cleanedCard)
+            );
+            await client.quit();
 
             return res.status(200).send(cleanedCard);
         }
