@@ -31,7 +31,7 @@ const getCardByName = async (req, res) => {
 
             await client.quit();
 
-            return res.status(200).send(cleanedCards)
+            return res.status(200).json({data: cleanedCards})
         }
 
         return res.status(404).json(`No cards where found with the name ${name.split('+').join(' ')}`);
@@ -59,14 +59,14 @@ const getCardById = async (req, res) => {
                     legalities: card.legalities,
                     magicApiId: card.id
                 }
-                
+
             await client.connect();
             await client.set(id,
                 JSON.stringify(cleanedCard)
             );
             await client.quit();
 
-            return res.status(200).send(cleanedCard);
+            return res.status(200).json({data: cleanedCard});
         }
 
         return res.status(404).json(`No cards where found with the ID: ${id}`);

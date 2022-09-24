@@ -7,7 +7,7 @@ const redis = async (req, res, next) => {
     if (getRes) {
         await client.quit();
         console.log(`returning ${req.params.name || req.params.id} from cache `);
-        return res.json({ success: true, data: JSON.parse(getRes) });
+        return res.json({ data: JSON.parse(getRes) });
     }
     await client.quit();
     next();
