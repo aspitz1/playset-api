@@ -9,7 +9,7 @@ const redis = async (req, res, next) => {
         console.log(`returning ${req.params.name || req.params.id} from cache `);
         return res.json({ success: true, data: JSON.parse(getRes) });
     }
-    
+    await client.quit();
     next();
   } catch (err) {
     console.log(err);

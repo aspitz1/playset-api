@@ -23,7 +23,8 @@ const getCardByName = async (req, res) => {
                     magicApiId: card.id
                 }
             });
-            
+
+            await client.connect();
             await client.set(name,
                 JSON.stringify(cleanedCards)
             );
@@ -58,7 +59,8 @@ const getCardById = async (req, res) => {
                     legalities: card.legalities,
                     magicApiId: card.id
                 }
-
+                
+            await client.connect();
             await client.set(id,
                 JSON.stringify(cleanedCard)
             );
