@@ -3,6 +3,7 @@
 [Deployed Site](https://playset.onrender.com/)
 
 [Link to App Repo](https://github.com/aspitz1/playset)
+
 ## About this Project
 Playset is a Magic Card collection tracker. It provides a search function allowing the user to find cards and see card specs. The user can specify the amount of cards in their collection, update the amount of cards in their collection or delete cards from their collection. Playset is suitable for use on desktops, tablets or phones. Currently Playset assumes one user, allowing for multiple users is first up on Playset's roadmap.
 
@@ -58,6 +59,8 @@ Playset is currently a demo. Once multiple users are enabled, use Playset to tra
 * Cleans data from outside API for Front-end use
 * Caches data using Redis to improve performance 
 * Stores user data in Postgres database
+
+<img width="1117" alt="Screen Shot 2022-09-25 at 8 48 04 PM" src="https://user-images.githubusercontent.com/95593550/192178268-b1b03673-ba02-413a-8976-207cf2a1f69c.png">
 
 ## Roadmap
 - [ ] Add multi user support through user accounts and authentication
