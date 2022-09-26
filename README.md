@@ -27,16 +27,8 @@ Playset is a Magic Card collection tracker. It provides a search function allowi
 
 ## Getting Started
 Visit the deployed site at [playset.onrender.com](https://playset.onrender.com/). Playset is deployed on a free service, so be patient please when the site is loading. After 15min of inactivity Playset takes about 30sec to spin up agian.
-### Local Set-up
-In the terminal: 
-* `git clone git@github.com:aspitz1/playset.git`
-* `npm i`
-* `npm start`
 
-To run tests: 
-* Check if Cypress is installed by running `npm list`
-  * If Cypress is not installed run `npm i cypress`
-* `npm run test`
+This API is built for Playset, and should not be run locally.
 
 ## Usage
 Playset is currently a demo. Once multiple users are enabled, use Playset to track your Magic collection. Playset uses [Magic: The Gathering Developers API](https://docs.magicthegathering.io/) for all card data.
