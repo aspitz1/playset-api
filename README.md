@@ -24,7 +24,6 @@ Playset is a Magic Card collection tracker. It provides a search function allowi
 ![Playset](https://user-images.githubusercontent.com/95593550/192172039-b63dbc61-9888-4aec-839b-351b3f5d450a.gif)
 
 ## Getting Started
-Visit the deployed site at [playset.onrender.com](https://playset.onrender.com/). Playset is deployed on a free service, so be patient please when the site is loading. After 15min of inactivity Playset takes about 30sec to spin up agian.
 
 This API is built for Playset, and should not be run locally.
 
