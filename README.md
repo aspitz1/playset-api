@@ -1,7 +1,5 @@
 # Playset
 
-[Deployed Site](https://playset.onrender.com/)
-
 [Link to App Repo](https://github.com/aspitz1/playset)
 
 ## About this Project
